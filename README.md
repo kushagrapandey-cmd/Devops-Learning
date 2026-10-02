@@ -1,30 +1,76 @@
-# Linux & DevOps Learning Journey
+# DevOps Learning Journey
 
-This repository documents my hands-on journey from Linux fundamentals to practical DevOps engineering. I use it to store study material, commands, labs, scripts, cheatsheets, projects, and progress notes as I learn Linux, networking, cloud, automation, and DevOps tools.
+This repository documents my hands-on journey from Linux fundamentals to practical DevOps engineering.
 
-## Learning Goals
+It is my central learning workspace for notes, scripts, labs, cheatsheets, troubleshooting exercises, study material, and small projects across Linux, networking, cloud, automation, and modern DevOps tools.
 
-- Understand the Linux filesystem and command line basics
-- Manage files, directories, permissions, and users
-- Automate tasks with shell scripting
-- Monitor processes and system health
-- Build practical Linux skills for daily use
-- Strengthen networking and troubleshooting fundamentals
-- Learn cloud administration with Microsoft Azure
-- Build automation skills with Bash and Python
-- Progress into Docker, Terraform, CI/CD, Kubernetes, and monitoring
+The goal is not just to collect theory. I want this repository to show what I actually study, practice, automate, troubleshoot, and build over time.
 
+---
+
+## Learning Roadmap
+
+My current learning path is organized roughly in this order:
+
+1. **Linux Fundamentals & Administration**
+   - Filesystem and command line
+   - Users, groups, permissions, and ownership
+   - Processes, services, logs, storage, and system resources
+   - Package management and troubleshooting
+
+2. **Networking Fundamentals**
+   - TCP/IP and the OSI model
+   - IP addressing and subnetting
+   - DNS, DHCP, SSH, NAT, routing, and ports
+   - Linux networking commands and troubleshooting
+
+3. **Cloud & Microsoft Azure**
+   - Cloud fundamentals
+   - Azure architecture and core services
+   - Compute, storage, networking, identity, and security
+   - Monitoring, backup, disaster recovery, and administration
+
+4. **Scripting & Automation**
+   - Bash scripting
+   - Python for automation
+   - Command-line automation
+   - File, process, monitoring, and system administration scripts
+
+5. **Git & GitHub**
+   - Version control fundamentals
+   - Branching and commits
+   - Remote repositories
+   - Collaboration workflows
+
+6. **DevOps Core**
+   - Docker
+   - Terraform
+   - CI/CD
+   - GitHub Actions / Azure DevOps
+   - Kubernetes and AKS
+   - Monitoring and observability
+
+7. **Hands-on Projects**
+   - Linux administration projects
+   - Automation utilities
+   - Cloud infrastructure
+   - Containerized applications
+   - CI/CD pipelines
+   - Infrastructure as Code
+   - Kubernetes deployments
 
 ---
 
 ## Repository Structure
 
 ```text
-Linux-Learnings/
+Devops-Learning/
 ├── README.md
+│
 ├── scripts/
 │   ├── bash/
 │   └── python/
+│
 ├── study-material/
 │   ├── linux/
 │   ├── networking/
@@ -36,185 +82,242 @@ Linux-Learnings/
 │       ├── cicd/
 │       ├── kubernetes/
 │       └── monitoring/
+│
 ├── labs/
 │   ├── linux/
 │   ├── networking/
 │   └── azure/
+│
 ├── cheatsheets/
 ├── projects/
 └── resources/
 ```
 
-### How I Use This Repository
+---
 
-- **scripts/** — Bash and Python scripts written while learning automation.
-- **study-material/** — Topic-wise notes, references, diagrams, PDFs, and learning material.
-- **labs/** — Hands-on exercises, command outputs, experiments, and troubleshooting practice.
-- **cheatsheets/** — Quick references for commands, ports, syntax, and frequently used concepts.
-- **projects/** — Practical Linux, networking, cloud, and DevOps projects.
-- **resources/** — Useful documentation, books, courses, and reference material.
+## How I Use This Repository
 
-The repository will grow gradually. I will add files when I actually study or build something rather than creating artificial content only to fill folders.
+### `scripts/`
+
+Contains scripts I write while learning automation and system administration.
+
+- `scripts/bash/` — Bash scripts
+- `scripts/python/` — Python automation scripts
+
+Scripts will range from simple learning exercises to practical utilities for monitoring, file management, system administration, networking, and DevOps automation.
+
+### `study-material/`
+
+Contains topic-wise learning material and notes.
+
+```text
+study-material/
+├── linux/
+├── networking/
+├── git-github/
+├── cloud-azure/
+└── devops/
+    ├── docker/
+    ├── terraform/
+    ├── cicd/
+    ├── kubernetes/
+    └── monitoring/
+```
+
+This can include Markdown notes, diagrams, PDFs, references, examples, and summaries created during study.
+
+### `labs/`
+
+Contains hands-on exercises and experiments.
+
+Examples:
+
+- Linux command practice
+- Process and service troubleshooting
+- Network troubleshooting
+- Azure administration exercises
+- Configuration experiments
+- Command outputs and observations
+
+### `cheatsheets/`
+
+Quick-reference material that I want to revise frequently, such as:
+
+- Important Linux commands
+- Common command options
+- Ports and protocols
+- Networking commands
+- Git commands
+- Bash syntax
+- Terraform commands
+- Docker commands
+- Kubernetes commands
+
+### `projects/`
+
+Contains practical projects that combine multiple concepts instead of isolated exercises.
+
+The complexity of these projects will increase as my DevOps knowledge improves.
+
+### `resources/`
+
+Useful external learning references such as documentation, books, courses, articles, and other resources.
 
 ---
 
-## Phase 1: Basic Commands
+## Current Foundation: Linux
 
-### Topics
-- `pwd`, `ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `rm`
-- `cat`, `less`, `head`, `tail`, `grep`
-- `man`, `help`, command syntax, flags, and arguments
-- Navigation and shell basics
+Linux is the first major foundation of this journey because many DevOps tools and production systems depend heavily on Linux concepts.
 
-### Practice Checklist
-- [ ] Learn the basic shell commands and what each does
-- [ ] Practice navigating directories safely
-- [ ] Understand file creation and deletion commands
-- [ ] Use `man` and `--help` to explore commands
+### Core Topics
 
-### Notes
-- 2026-08-18: Set up the Linux learning tracker and verified the repo structure. Reviewed the purpose of a syllabus tracker and how to keep notes organized by phase.
-- Learned that a clean tracking file is useful for recording commands, progress, and future review notes.
-
----
-
-## Phase 2: File Management
-
-### Topics
-- File and directory structure (`/etc`, `/home`, `/var`, `/tmp`, etc.)
-- Copying, moving, renaming, and deleting files
-- Searching for files and content
-- Compression and archiving (`tar`, `gzip`, `zip`)
-
-### Practice Checklist
-- [ ] Understand the Linux directory hierarchy
-- [ ] Practice copying and moving files between directories
-- [ ] Use `find`, `locate`, and `grep` for file discovery
-- [ ] Create and extract archives
-
-### Notes
-- Add daily learning notes here.
-
----
-
-## Phase 3: Users, Permissions, and Ownership
-
-### Topics
+- Linux filesystem hierarchy
+- File and directory management
+- Text processing
 - Users and groups
-- File ownership and permissions (`chmod`, `chown`, `chgrp`)
-- Sudo and root privileges
-- Access control basics
-
-### Practice Checklist
-- [ ] Learn how users and groups work in Linux
-- [ ] Practice reading file permissions
-- [ ] Understand symbolic and numeric permission modes
-- [ ] Use `sudo` responsibly and safely
-
-### Notes
-- Add daily learning notes here.
-
----
-
-## Phase 4: Shell Scripting
-
-### Topics
-- Shell variables and environment variables
-- Conditionals and loops
-- Functions and scripts
-- Input, output, and argument handling
-- Automation and scheduling basics
-
-### Practice Checklist
-- [ ] Write a simple shell script
-- [ ] Use variables and user input
-- [ ] Create conditional logic with `if`, `elif`, and `else`
-- [ ] Practice loops with files or numbers
-- [ ] Run scripts and debug errors
-
-### Notes
-- Add daily learning notes here.
+- Permissions and ownership
+- Processes and jobs
+- Services and `systemd`
+- Logs
+- Storage and disk usage
+- CPU and memory monitoring
+- Networking
+- Package management
+- Shell scripting
+- Input/output redirection
+- Pipes and text-processing tools such as `grep`, `sed`, and `awk`
 
 ---
 
-## Phase 5: Process Management and System Monitoring
+## Bash Learning
 
-### Topics
-- `ps`, `top`, `htop`, `kill`, `jobs`
-- Running processes in the foreground and background
-- System resources and monitoring basics
-- Services and daemons
+Bash scripts are stored in:
 
-### Practice Checklist
-- [ ] Learn how to list active processes
-- [ ] Understand process states and priorities
-- [ ] Practice starting and stopping background jobs
-- [ ] Monitor CPU and memory usage
+```text
+scripts/bash/
+```
 
-### Notes
-- Add daily learning notes here.
+Topics I will practice include:
 
----
-
-## Phase 6: Networking and Package Management
-
-### Topics
-- Network basics and IP addresses
-- `ping`, `curl`, `wget`, `ssh`
-- Package managers (`apt`, `dnf`, `yum`)
-- Installing, updating, and removing software
-
-### Practice Checklist
-- [ ] Learn how to check connectivity
-- [ ] Practice installing packages from repositories
-- [ ] Understand common networking commands
-- [ ] Securely connect to remote machines
-
-### Notes
-- Add daily learning notes here.
+- Variables
+- User input
+- Positional parameters
+- Exit codes
+- Conditional statements
+- `case` statements
+- Loops
+- Functions
+- Arrays
+- File operations
+- Input/output redirection
+- Pipes
+- Process management
+- Log processing
+- System monitoring
+- Networking utilities
+- Automation
+- Scheduled tasks
+- Backup and maintenance scripts
 
 ---
 
-## Daily Progress Log
+## Python for DevOps
 
-Use this section to write short, focused notes each day.
+Python scripts are stored in:
 
-### Today
-- Date: 2026-08-18
-- Topic: Linux learning tracker setup and command-line foundations
-- What I learned: Created a structured syllabus tracker, organized the phases of my Linux journey, and confirmed how to sync notes into the repo. Reviewed the value of keeping daily Linux notes in one place.
-- Commands practiced: `pwd`, `ls`, `git status`, `git add`, `git commit`, `git push`
-- Questions / next steps: Continue building command fluency with shell navigation and file operations.
+```text
+scripts/python/
+```
 
-### Recent Progress
-- 2026-08-18: Set up the README as a Linux syllabus tracker and synced it to GitHub.
-- 2026-08-18: Organized learning phases for commands, file management, permissions, scripting, and monitoring.
-- 2026-08-18: Confirmed the repo is ready for daily progress updates.
+The focus will be practical automation rather than Python for its own sake.
 
----
+Planned areas include:
 
-## Quick Reference Commands
-
-- `pwd` — print working directory
-- `ls` — list files and directories
-- `cd` — change directory
-- `mkdir` — create a directory
-- `cp` — copy files
-- `mv` — move or rename files
-- `rm` — remove files or directories
-- `chmod` — change file permissions
-- `grep` — search text
-- `find` — search files by name or type
-- `ps` — list running processes
-- `man` — open command manual
+- File and directory automation
+- System information collection
+- Log parsing
+- Process monitoring
+- Network automation
+- API interaction
+- JSON/YAML processing
+- Cloud automation
+- DevOps utilities
 
 ---
 
-## Notes for Future Self
+## Git Workflow
 
-- Keep learning consistent, even if only a few commands a day.
-- Practice commands in the terminal rather than only reading about them.
-- Save small examples and commands that you use often.
-- Review previous days' notes to reinforce learning.
+For each meaningful learning change, I try to follow:
 
-This repository is my Linux and DevOps syllabus tracker, hands-on lab notebook, script collection, and progress journal.
+```text
+Learn / Build
+     ↓
+Test
+     ↓
+git status
+     ↓
+git add
+     ↓
+git diff --cached
+     ↓
+git commit
+     ↓
+git push
+```
+
+Commit messages should describe the actual learning or change, for example:
+
+```text
+add first Bash practice script
+practice Bash conditional statements
+add Linux process monitoring notes
+add networking subnetting lab
+add Docker container networking notes
+build disk usage monitoring script
+```
+
+The purpose is to maintain a useful history of progress, not to generate meaningless commits only for activity.
+
+---
+
+## Progress Philosophy
+
+- Learn concepts deeply enough to explain them.
+- Practice commands instead of only reading about them.
+- Keep small scripts and examples that demonstrate what I learned.
+- Document mistakes and troubleshooting steps.
+- Revisit earlier concepts regularly.
+- Gradually turn isolated skills into complete projects.
+- Keep the repository organized enough that I can use it later as my own reference.
+
+---
+
+## Long-Term Goal
+
+The long-term goal of this repository is to document my progression from:
+
+```text
+Linux Fundamentals
+        ↓
+Networking
+        ↓
+Cloud / Azure
+        ↓
+Bash & Python Automation
+        ↓
+Git
+        ↓
+Docker
+        ↓
+Terraform
+        ↓
+CI/CD
+        ↓
+Kubernetes / AKS
+        ↓
+Monitoring & Observability
+        ↓
+Practical DevOps Projects
+```
+
+This repository will evolve alongside my learning, with real notes, scripts, labs, and projects added as I complete them.
