@@ -1,6 +1,6 @@
-# Linux Learning Journey
+# Linux & DevOps Learning Journey
 
-This repository is my personal Linux syllabus tracker. I will use it to record my progress from beginner to confident system user and shell script writer.
+This repository documents my hands-on journey from Linux fundamentals to practical DevOps engineering. I use it to store study material, commands, labs, scripts, cheatsheets, projects, and progress notes as I learn Linux, networking, cloud, automation, and DevOps tools.
 
 ## Learning Goals
 
@@ -9,6 +9,52 @@ This repository is my personal Linux syllabus tracker. I will use it to record m
 - Automate tasks with shell scripting
 - Monitor processes and system health
 - Build practical Linux skills for daily use
+- Strengthen networking and troubleshooting fundamentals
+- Learn cloud administration with Microsoft Azure
+- Build automation skills with Bash and Python
+- Progress into Docker, Terraform, CI/CD, Kubernetes, and monitoring
+
+
+---
+
+## Repository Structure
+
+```text
+Linux-Learnings/
+├── README.md
+├── scripts/
+│   ├── bash/
+│   └── python/
+├── study-material/
+│   ├── linux/
+│   ├── networking/
+│   ├── git-github/
+│   ├── cloud-azure/
+│   └── devops/
+│       ├── docker/
+│       ├── terraform/
+│       ├── cicd/
+│       ├── kubernetes/
+│       └── monitoring/
+├── labs/
+│   ├── linux/
+│   ├── networking/
+│   └── azure/
+├── cheatsheets/
+├── projects/
+└── resources/
+```
+
+### How I Use This Repository
+
+- **scripts/** — Bash and Python scripts written while learning automation.
+- **study-material/** — Topic-wise notes, references, diagrams, PDFs, and learning material.
+- **labs/** — Hands-on exercises, command outputs, experiments, and troubleshooting practice.
+- **cheatsheets/** — Quick references for commands, ports, syntax, and frequently used concepts.
+- **projects/** — Practical Linux, networking, cloud, and DevOps projects.
+- **resources/** — Useful documentation, books, courses, and reference material.
+
+The repository will grow gradually. I will add files when I actually study or build something rather than creating artificial content only to fill folders.
 
 ---
 
@@ -171,4 +217,4 @@ Use this section to write short, focused notes each day.
 - Save small examples and commands that you use often.
 - Review previous days' notes to reinforce learning.
 
-This file is my Linux syllabus tracker and progress journal.
+This repository is my Linux and DevOps syllabus tracker, hands-on lab notebook, script collection, and progress journal.
