@@ -25,4 +25,5 @@ if kubectl -n "$ns" rollout status deployment/sentinel --timeout=30s; then
 fi
 kubectl -n "$ns" rollout undo deployment/sentinel
 kubectl -n "$ns" rollout status deployment/sentinel --timeout=120s
-kubectl -n "$ns" wait --for=condition=Ready pod -l app=sentinel --timeout=120s
+# rollout status verifies the current Deployment; old revision pods may disappear during cleanup.
+
