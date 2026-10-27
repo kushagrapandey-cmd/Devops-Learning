@@ -1,3 +1,7 @@
-# Terraform Study Material
+# study-material / devops / terraform
 
-Terraform concepts, HCL notes, providers, state, modules, variables, outputs, and infrastructure-as-code practice.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../../README.md) for implemented content and navigation.

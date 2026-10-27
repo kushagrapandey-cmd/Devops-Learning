@@ -1,3 +1,7 @@
-# Networking Labs
+# labs / networking
 
-Hands-on networking exercises, packet-flow practice, troubleshooting, and command outputs.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

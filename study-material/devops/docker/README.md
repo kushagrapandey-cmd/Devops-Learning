@@ -1,3 +1,7 @@
-# Docker Study Material
+# study-material / devops / docker
 
-Docker concepts, commands, Dockerfiles, images, containers, volumes, networking, and practice notes.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../../README.md) for implemented content and navigation.

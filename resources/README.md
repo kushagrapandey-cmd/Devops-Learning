@@ -1,3 +1,7 @@
-# Resources
+# resources
 
-Useful books, documentation, courses, articles, and other learning references.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../README.md) for implemented content and navigation.

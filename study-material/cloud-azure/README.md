@@ -1,3 +1,7 @@
-# Cloud & Azure Study Material
+# study-material / cloud-azure
 
-Cloud fundamentals, Microsoft Azure notes, AZ-900/AZ-104 material, architecture, networking, identity, storage, monitoring, and labs.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

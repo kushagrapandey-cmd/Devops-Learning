@@ -1,3 +1,7 @@
-# Networking Study Material
+# study-material / networking
 
-Networking notes covering TCP/IP, DNS, routing, subnetting, ports, SSH, troubleshooting, and related concepts.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

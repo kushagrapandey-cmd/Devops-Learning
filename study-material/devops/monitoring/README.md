@@ -1,3 +1,7 @@
-# Monitoring Study Material
+# study-material / devops / monitoring
 
-Monitoring and observability notes covering logs, metrics, alerts, system monitoring, and operational troubleshooting.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../../README.md) for implemented content and navigation.

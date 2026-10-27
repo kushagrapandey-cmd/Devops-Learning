@@ -1,3 +1,7 @@
-# Projects
+# projects
 
-Practical Linux, networking, cloud, automation, and DevOps projects built during the learning journey.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../README.md) for implemented content and navigation.

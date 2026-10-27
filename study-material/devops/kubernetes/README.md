@@ -1,3 +1,7 @@
-# Kubernetes Study Material
+# study-material / devops / kubernetes
 
-Kubernetes and AKS notes covering pods, deployments, services, configuration, storage, networking, and troubleshooting.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../../README.md) for implemented content and navigation.

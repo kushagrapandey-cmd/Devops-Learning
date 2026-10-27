@@ -1,3 +1,7 @@
-# Bash Scripts
+# scripts / bash
 
-Bash scripts created while learning Linux, shell scripting, system administration, and DevOps automation.
+Section index for the systems and automation reference workspace.
+
+The executable example is [my_first_bashScript.sh](my_first_bashScript.sh).
+
+See the [repository overview](../../README.md) for implemented content and navigation.

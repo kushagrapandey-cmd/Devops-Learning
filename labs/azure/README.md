@@ -1,3 +1,7 @@
-# Azure Labs
+# labs / azure
 
-Hands-on Microsoft Azure exercises and cloud administration labs.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

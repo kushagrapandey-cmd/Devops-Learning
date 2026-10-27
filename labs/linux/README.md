@@ -1,3 +1,7 @@
-# Linux Labs
+# labs / linux
 
-Hands-on Linux exercises, command practice, troubleshooting scenarios, and lab notes.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

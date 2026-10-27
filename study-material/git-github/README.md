@@ -1,3 +1,7 @@
-# Git & GitHub Study Material
+# study-material / git-github
 
-Notes and references for Git, GitHub, branching, commits, collaboration, and version-control workflows.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../README.md) for implemented content and navigation.

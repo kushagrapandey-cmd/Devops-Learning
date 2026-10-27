@@ -1,3 +1,7 @@
-# CI/CD Study Material
+# study-material / devops / cicd
 
-CI/CD concepts and notes for GitHub Actions, Azure DevOps, pipelines, builds, testing, and deployments.
+Section index for the systems and automation reference workspace.
+
+This section currently contains this index only.
+
+See the [repository overview](../../../README.md) for implemented content and navigation.
