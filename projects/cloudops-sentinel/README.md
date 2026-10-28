@@ -1,14 +1,23 @@
 # CloudOps Sentinel
 
-**Linux operations toolkit + Python health API + Kubernetes recovery lab + Azure AKS deployment path.**
+**Linux VM operations + Bash/Python automation + command-driven practice + Kubernetes recovery + optional Azure infrastructure.**
 
 Built to connect Linux administration, Bash, Python, Azure and Kubernetes in one explainable operations project. The scenario: an operations engineer needs to check a Linux system, diagnose an unhealthy workload, summarize HTTP errors, and recover a failed deployment without guessing.
 
 This is a portfolio lab, not a production monitoring product. See [verification evidence](evidence/VERIFICATION.md) for exactly what has actually run. No Azure deployment is claimed.
 
-## Interactive browser demo
+## One website, two learning labs
 
-The `web/` directory contains a lightweight Vercel-hostable incident simulator with four scenarios, a safe practice terminal, saved local progress and incident JSON export. All browser metrics are illustrative. The real Python and Kubernetes tools run separately.
+| Lab | Open | What you practice |
+| --- | --- | --- |
+| Kubernetes incident lab | [Main page](https://cloudops-sentinel-three.vercel.app/) | Readiness failure, broken image release, memory-limit concepts and Service selector mismatch |
+| Linux VM workbench | [Linux page](https://cloudops-sentinel-three.vercel.app/linux.html) | Typed commands for stopped services, wrong ports, remote connectivity and planned patch maintenance |
+
+Both pages belong to the same website, Vercel project and source directory. Browser outputs are labelled simulations; neither page executes a real shell or controls Azure.
+
+The Linux workbench requires evidence collection before a fix and a successful validation command before closing an incident. It includes command history, hints, explanations, reset and transcript export. The Kubernetes lab includes guided controls, a practice terminal, locally saved scenario/phase and incident export.
+
+Start the Linux workbench by typing `help`. Simulator shortcuts such as `restore-config` and `restore-nsg` are teaching commands; the [Hinglish Linux guide](docs/LINUX_VM_LAB.md) maps the exercises to real procedures.
 
 ## What it does
 
@@ -21,7 +30,10 @@ The `web/` directory contains a lightweight Vercel-hostable incident simulator w
 - Deploys two replicas through a ClusterIP Service, with bounded CPU/memory and rolling updates.
 - Exercises readiness failure/recovery, deleted-pod replacement, and explicit rollback after a broken image release on kind.
 - Provides opt-in Azure CLI scripts for ACR + AKS, restricted API access and scoped cleanup.
-- Includes GitHub Actions for Python tests, ShellCheck, image build, kind deployment, smoke checks and recovery drills.
+- Installs the real Python API as a non-root Ubuntu systemd service with loopback binding.
+- Provides Linux inspection, baseline configuration backup/restore and guarded interactive patching scripts.
+- Provides Bicep for an optional Ubuntu Azure VM, VNet, subnet, NIC, NSG and public IP; application access uses an SSH tunnel.
+- Includes GitHub Actions for Python/JavaScript tests, ShellCheck, Bicep compilation, real systemd recovery, Docker/kind deployment and rollback drills.
 
 ## Start without Docker or an Azure account
 
@@ -44,6 +56,22 @@ curl -fsS http://127.0.0.1:8080/api/status
 ```
 
 Stop with Ctrl+C. Exit `1` from host-check means an alert, not a broken script; `2` means collection/input failure. A memory or disk alert does not automatically make a pod unready: restarting healthy processes during a capacity incident can worsen it.
+
+## Run the real Linux VM lab
+
+Use a dedicated Ubuntu 24.04 machine with systemd, Python, curl, git, iproute2 and sudo. The installer creates a service account and writes under `/opt` and `/etc`. Run from the project directory:
+
+```bash
+sudo bash linux/install.sh --install-dedicated-lab
+sudo systemctl status sentinel --no-pager
+curl -fsS http://127.0.0.1:8080/healthz
+bash linux/inspect.sh
+bash linux/patch.sh plan
+```
+
+Follow [LINUX_VM_LAB.md](docs/LINUX_VM_LAB.md) for controlled service failures, wrong-port diagnosis, configuration restore, patch maintenance, post-reboot validation and optional Azure provisioning. Patch planning does not install updates; applying upgrades requires an explicit maintenance flag and package review. No script automatically reboots. The configuration backup covers `app.env` only; it is not a package/OS rollback.
+
+The real VM app listens on loopback. Remote access uses SSH forwarding; the simulator's NSG exercise illustrates a separate hypothetical public application path.
 
 ## Run Kubernetes locally
 
@@ -79,12 +107,14 @@ The same image can run on local kind or optional AKS. Host scripts run separatel
 
 ## Read this in order
 
-1. [Complete walkthrough](docs/WALKTHROUGH.md): every file, execution path, commands and design decisions.
-2. [Hands-on demo](docs/DEMO.md): a reproducible presentation and fault exercises.
-3. [Azure deployment](docs/AZURE.md): billable lab, identity, image flow and cleanup.
-4. [Operations runbook](docs/RUNBOOK.md): investigate common failures.
-5. [Interview guide](docs/INTERVIEW.md): architecture explanation, questions and honest claims.
-6. [Verification](evidence/VERIFICATION.md): executed versus unexecuted checks.
+1. [Hinglish Linux VM guide](docs/LINUX_VM_LAB.md): start here for command practice, real setup and simple technical explanations.
+2. [Build it yourself](docs/BUILD_IT_YOURSELF.md): rebuild the project in small steps.
+3. [Complete walkthrough](docs/WALKTHROUGH.md): every file, execution path, commands and design decisions.
+4. [Hands-on demo](docs/DEMO.md): a reproducible presentation and fault exercises.
+5. [Azure deployment](docs/AZURE.md): billable lab, identity, image flow and cleanup.
+6. [Operations runbook](docs/RUNBOOK.md): investigate common failures.
+7. [Interview guide](docs/INTERVIEW.md): architecture explanation, questions and honest claims.
+8. [Verification](evidence/VERIFICATION.md): executed versus unexecuted checks.
 
 ## Scope and trade-offs
 
@@ -96,7 +126,29 @@ One AKS node is a cost-conscious lab choice, not high availability. Two pods on 
 
 This project was built with AI assistance. The repository documents implementation and tests; personal hands-on proficiency is demonstrated by reproducing the exercises and explaining the trade-offs.
 
+## Project structure
 
-## Linux VM workbench
+| Path | Purpose |
+| --- | --- |
+| `sentinel/` | Python metric collector, HTTP API and log-summary CLI |
+| `scripts/` | Host checks, Kubernetes deployment, diagnosis and drills |
+| `linux/` | systemd unit, installer, inspection, configuration backup/restore and patch helper |
+| `k8s/` | Namespace, Deployment, Service and Kustomization |
+| `azure/` | Optional AKS/ACR provisioning and scoped cleanup |
+| `azure/linux-vm/` | Optional Ubuntu VM Bicep and deployment helper |
+| `web/` | Two pages of the same static website |
+| `tests/` | Python integration/guard tests and JavaScript model tests |
+| `docs/`, `evidence/` | Learning guides, runbooks and verification records |
 
-[Open the command-driven Linux lab](https://cloudops-sentinel-three.vercel.app/linux.html). Practice service failure, wrong port, network diagnosis and patch maintenance through typed commands and evidence gates. Real Ubuntu systemd install, inspection, config backup/restore and guarded patch scripts live in `linux/`; optional Azure VM Bicep is in `azure/linux-vm/`. Start with [the Hinglish guide](docs/LINUX_VM_LAB.md). No Azure VM deployment is claimed.
+## Validation and current limits
+
+```bash
+bash scripts/verify.sh
+node --test tests/*.test.mjs
+```
+
+Node.js is needed for browser model tests, not the Python runtime. Docker, kind and kubectl are needed for local Kubernetes exercises. Azure CLI/Bicep and subscription permissions are needed for optional Azure provisioning.
+
+The [verified Linux extension CI run](https://github.com/kushagrapandey-cmd/Devops-Learning/actions/runs/40630571493) passed 20 Python tests, 18 JavaScript tests, ShellCheck, Bicep compilation, real Ubuntu systemd install/recovery, configuration backup/restore, apt upgrade simulation and the Kubernetes deployment/recovery checks.
+
+Actual Azure VM/AKS provisioning, OS package upgrades and real reboot have not been verified by this build. No data-disk expansion, Azure Backup or multi-VM availability module is implemented. Browser exercises do not establish real infrastructure experience. See [the verification record](evidence/VERIFICATION.md) for evidence and limits.
