@@ -86,3 +86,8 @@ Vercel serves static HTML/CSS/JavaScript. It is not running the AKS cluster or t
 ## Your independent rebuild challenge
 
 Create a fresh directory. Implement disk percentage and one test without copying. Add JSON CLI output and exit codes. Add the three HTTP endpoints. Containerize. Add Deployment/Service/probes. Reproduce one failure and write what you observed. Finally build a tiny simulator with healthy/injected/diagnosed/recovered states. Compare with this repository only after each attempt. This demonstrates understanding more reliably than memorizing the README.
+
+
+## Build the Linux VM module yourself
+
+[The Hinglish Linux guide](LINUX_VM_LAB.md) explains service supervision, environment variables, loopback binding, SSH tunnels, backup scope, apt maintenance and Bicep. Rebuild in this order: manual Python → systemd → HTTP validation → deliberate service/config failure → backup/restore → patch planning → optional Azure VM. Website simulator commands are teaching shortcuts; use the guide mappings for real execution.

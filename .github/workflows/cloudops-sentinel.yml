@@ -22,9 +22,25 @@ jobs:
       - name: Unit and HTTP integration tests
         run: bash scripts/verify.sh
       - name: Browser model tests
-        run: node --test tests/model.test.mjs
+        run: node --test tests/*.test.mjs
       - name: ShellCheck
-        run: shellcheck scripts/*.sh azure/*.sh
+        run: shellcheck scripts/*.sh azure/*.sh linux/*.sh azure/linux-vm/*.sh
+      - name: Compile Azure VM Bicep
+        run: az bicep build --file azure/linux-vm/main.bicep --outfile /tmp/sentinel-linux-arm.json
+      - name: Real systemd install and recovery
+        run: |
+          sudo bash linux/install.sh --install-dedicated-lab
+          sudo systemctl stop sentinel
+          if curl -fsS http://127.0.0.1:8080/healthz; then exit 1; fi
+          sudo systemctl start sentinel
+          curl --retry 10 --retry-delay 1 --retry-connrefused -fsS http://127.0.0.1:8080/healthz
+          sudo bash linux/config-backup.sh backup
+          backup=$(sudo find /var/backups/sentinel-lab -type f -name "app.env.*" | head -1)
+          sudo sed -i "s/PORT=8080/PORT=9090/" /etc/sentinel-lab/app.env
+          sudo systemctl restart sentinel
+          sudo bash linux/config-backup.sh restore "$backup" --restore-lab-config
+          bash linux/patch.sh plan
+          sudo systemctl stop sentinel
       - name: Install kind
         run: |
           curl -fsSLo /tmp/kind https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64

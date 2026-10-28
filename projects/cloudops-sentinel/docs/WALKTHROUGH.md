@@ -135,3 +135,8 @@ The workflow uses versioned action tags for readability; a hardened supply chain
 ## 11. How to own the project
 
 Reproduce it, read the small Python modules, change a threshold, induce one readiness failure, inspect events, explain the recovery, deploy to your own Azure subscription only after checking costs, and record what actually happened. Once you can do these without copying a script blindly, the repository becomes evidence you can defend.
+
+
+## Linux VM extension: file responsibilities
+
+Read [LINUX_VM_LAB.md](LINUX_VM_LAB.md) for the layman explanation and actual commands. `linux/sentinel.service` supervises the real Python process. `install.sh` installs under a non-root service account. `inspect.sh` checks layers independently. `config-backup.sh` backs up/restores baseline application configuration only. `patch.sh` separates apt simulation from an explicit interactive maintenance operation. `azure/linux-vm/main.bicep` connects VM/NIC/subnet/NSG/public IP. `web/assets/linux-model.js` implements command-driven simulation; `linux-app.js` renders it without shell execution.

@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {labs,startLab,runCommand} from '../web/assets/linux-model.js';
+for(const id of Object.keys(labs))test(`${id}: evidence then fix then verification`,()=>{let s=startLab(id);s=runCommand(s,labs[id].fix).state;assert.equal(s.fixed,false);assert.equal(s.patched,false);for(const c of labs[id].required)s=runCommand(s,c).state;s=runCommand(s,labs[id].fix).state;assert.equal(s.verified,false);if(id==='patch'){s=runCommand(s,'curl localhost:8080/healthz').state;assert.equal(s.verified,false);s=runCommand(s,'sudo reboot').state;}if(id==='network'){s=runCommand(s,'curl localhost:8080/healthz').state;assert.equal(s.verified,false);}s=runCommand(s,id==='network'?'curl remote:8080/healthz':'curl localhost:8080/healthz').state;assert.equal(s.verified,true);});
+test('arbitrary shell input is never executed',()=>{const result=runCommand(startLab(),'rm -rf /');assert.match(result.output,/Unsupported/);assert.equal(result.state.fixed,false);});
+test('loopback success does not close NSG incident',()=>assert.equal(runCommand(startLab('network'),'curl localhost:8080/healthz').state.verified,false));

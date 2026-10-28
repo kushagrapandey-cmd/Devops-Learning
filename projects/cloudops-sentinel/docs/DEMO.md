@@ -67,3 +67,8 @@ For richer evidence, capture `kubectl get pods -w` and `kubectl get endpointslic
 - Show test evidence and state the Azure deployment status honestly (30 seconds).
 
 Never present expected output as output you captured. Do not publish kubeconfig, subscription identifiers, host reports or Azure tokens.
+
+
+## Linux command-driven acceptance tests
+
+Follow [LINUX_VM_LAB.md](LINUX_VM_LAB.md): type help, collect required evidence, attempt premature recovery (must be blocked), apply the appropriate fix and verify HTTP. Network recovery requires remote verification; local success alone cannot close it. Patching requires backup, upgrade simulation, apply, simulated reboot and postcheck. Export the command transcript. For real Ubuntu run install, stop/start, wrong-port config backup/restore and patch plan; actual apt upgrades and reboot require a dedicated maintenance window.

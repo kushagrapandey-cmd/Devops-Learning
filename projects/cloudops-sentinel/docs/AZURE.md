@@ -85,3 +85,8 @@ Both should eventually return false. If the managed node group remains, inspect 
 - [Kubernetes probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/): startup/readiness/liveness semantics.
 - [Kubernetes security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/): non-root and filesystem controls.
 - [kind quick start](https://kind.sigs.k8s.io/docs/user/quick-start/): local cluster and image loading.
+
+
+## Alternative Linux VM deployment path
+
+The [Linux VM lab](LINUX_VM_LAB.md) uses `azure/linux-vm/main.bicep` and a guarded helper instead of AKS. The app stays on loopback behind an SSH tunnel. Review what-if, source-IP restriction, public-key authentication, VM/public-IP/disk costs and dedicated-group cleanup. This is a separate optional resource group, not a migration of the AKS lab.

@@ -28,3 +28,8 @@ Pod deletion is not a root-cause fix. Capture logs/events first when evidence ma
 For Linux service incidents outside this container demo, use `systemctl status SERVICE`, `journalctl -u SERVICE --since ...`, `ss -ltn` and relevant permissions checks. The project does not install a systemd service.
 
 For a real incident record: timestamp (UTC), symptom, affected scope, observations, hypothesis, action, result and follow-up. Do not claim a root cause merely because a restart temporarily helped.
+
+
+## Linux VM operations
+
+Use [LINUX_VM_LAB.md](LINUX_VM_LAB.md). Investigate systemctl → journal → listener → localhost HTTP → remote path. Backup baseline configuration before a wrong-port drill. Upgrade simulation precedes interactive patching; no helper reboots automatically. A config restore does not reverse package changes. Do not alter the only SSH management path during a network failure exercise.

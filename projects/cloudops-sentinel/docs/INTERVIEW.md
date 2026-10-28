@@ -67,3 +67,8 @@ Add “deployed to Azure AKS with ACR and managed identity” only after that de
 6. Explain how rolling back differs from fixing the image tag.
 7. Recreate the app from a fresh clone and explain each file without reading this guide.
 8. Only after local practice, run the Azure lab, collect evidence, remove the resources and verify cleanup.
+
+
+## Linux VM talking points
+
+Explain why an active service may listen on the wrong port, why localhost success does not establish remote reachability, why enable differs from start, and why app.env backup is not an OS rollback. Show a typed investigation in linux.html and reproduce systemd stop/start on a dedicated Ubuntu VM. Discuss patch prechecks, package review, possible service restarts and post-reboot application validation. The [Hinglish guide](LINUX_VM_LAB.md) gives exact code and commands. Claim Azure deployment or actual patching only after personally completing them.

@@ -95,3 +95,8 @@ Memory/load readings in a container are host-visible and are **not** cgroup util
 One AKS node is a cost-conscious lab choice, not high availability. Two pods on the same node do not survive node loss. AKS control-plane Free tier does not make worker VMs, disks, ACR or network traffic free. Azure provisioning is manual and explicitly opt-in.
 
 This project was built with AI assistance. The repository documents implementation and tests; personal hands-on proficiency is demonstrated by reproducing the exercises and explaining the trade-offs.
+
+
+## Linux VM workbench
+
+[Open the command-driven Linux lab](https://cloudops-sentinel-three.vercel.app/linux.html). Practice service failure, wrong port, network diagnosis and patch maintenance through typed commands and evidence gates. Real Ubuntu systemd install, inspection, config backup/restore and guarded patch scripts live in `linux/`; optional Azure VM Bicep is in `azure/linux-vm/`. Start with [the Hinglish guide](docs/LINUX_VM_LAB.md). No Azure VM deployment is claimed.

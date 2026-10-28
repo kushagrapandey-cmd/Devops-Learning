@@ -1,0 +1,19 @@
+[Unit]
+Description=CloudOps Sentinel Linux lab
+After=network.target
+[Service]
+Type=simple
+User=sentinel
+Group=sentinel
+WorkingDirectory=/opt/sentinel
+Environment=PYTHONDONTWRITEBYTECODE=1
+EnvironmentFile=/etc/sentinel-lab/app.env
+ExecStart=/usr/bin/python3 -m sentinel.server
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+[Install]
+WantedBy=multi-user.target
