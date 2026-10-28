@@ -29,3 +29,21 @@ Browser metrics are simulation values, not cloud telemetry. Real Kubernetes test
 ## Learn and reproduce
 
 Read [Build it yourself](../docs/BUILD_IT_YOURSELF.md), [code walkthrough](../docs/WALKTHROUGH.md), [demo tests](../docs/DEMO.md), and [Azure lab](../docs/AZURE.md).
+
+
+## Linux VM extension — 28 October 2026
+
+Code commit: 48be4bf373499d6e3ece1e8ce70f793a3d47d718.
+
+[Full passing CI run](https://github.com/kushagrapandey-cmd/Devops-Learning/actions/runs/40630571493).
+
+- 20 Python/HTTP/guard tests and 18 JavaScript model tests passed.
+- ShellCheck passed for original and new Linux/Azure scripts.
+- Azure VM Bicep compiled successfully; compilation is not cloud deployment validation.
+- Real systemd application install, HTTP precheck, stop/start recovery, wrong-port configuration change, backup/restore and apt upgrade simulation passed on Ubuntu GitHub runner.
+- Original Docker/kind deployment, HTTP smoke and Kubernetes recovery/rollback passed.
+- Live browser: all four Linux command-driven assignments passed; premature recovery rejected; remote verification required for NSG case; patch/reboot simulation, transcript download and reset passed.
+- Vercel production READY: https://cloudops-sentinel-three.vercel.app/linux.html
+- No actual Azure VM creation, paid resources, OS package upgrades, real reboot, physical power outage, mobile device QA or remote NSG injection performed. Simulator outputs are teaching examples. The real app uses loopback plus SSH tunnel, unlike the hypothetical public application path in the NSG assignment.
+
+All learning guides now reference the full Hinglish Linux guide at docs/LINUX_VM_LAB.md.
